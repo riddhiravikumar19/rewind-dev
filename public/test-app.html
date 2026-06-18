@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rewind Test App</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: #050807;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: grid;
+        place-items: center;
+      }
+
+      .card {
+        width: 420px;
+        padding: 32px;
+        border-radius: 24px;
+        background: #0e1512;
+        border: 1px solid #1f3a2e;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        border: 0;
+        border-radius: 12px;
+        background: #39ff88;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .danger {
+        margin-top: 12px;
+        background: #ff4d4d;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <h1>Demo Store</h1>
+      <p>This page is used to test Rewind.dev tracking.</p>
+
+      <button id="checkout-button">Checkout</button>
+      <button class="danger" id="error-button">Trigger Error</button>
+    </div>
+
+    <script
+      src="/rewind-tracker.js"
+      data-project-key="rw_14c3abf17f84afea91eaa5428e570eea"
+    ></script>
+
+    <script>
+      document
+        .getElementById("checkout-button")
+        .addEventListener("click", function () {
+          fetch("/fake-payment-api").then(function () {
+            console.log("checkout clicked");
+          });
+        });
+
+      document
+        .getElementById("error-button")
+        .addEventListener("click", function () {
+          console.error("PaymentIntent undefined");
+        });
+    </script>
+  </body>
+</html>

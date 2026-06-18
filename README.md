@@ -122,10 +122,6 @@ A dedicated demo guide page explains the complete live demo flow for judges and 
 
 ![Sessions](public/screenshots/sessions.png)
 
-### Session Detail Timeline
-
-![Session Detail](public/screenshots/session-detail.png)
-
 ### Real Ghost Replay
 
 ![Ghost Replay](public/screenshots/ghost-replay.png)
